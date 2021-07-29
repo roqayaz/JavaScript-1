@@ -13,7 +13,7 @@ const app = () => {
     //Duration 
     let fakeDuration = 600;
 
-    outline.style.strokeDasharray = 100;
+    outline.style.strokeDasharray = outlineLength;
     outline.style.strokeDashoffset = outlineLength;
 
     //play sound
@@ -32,7 +32,22 @@ const app = () => {
             video.pause();
             play.src = './svg/play/.svg';
         }
+    };
+
+    //we can animated the circle
+    song.ontimeupdate = () => {
+     let currentTime = song.currentTime;
+     let elapsed = fakeDuration - currentTime;
+     let seconds = Math.floor(elapsed % 60);
+     let minutes = Math.floor(elapsed / 60);
+
+     //Animate the circle
+     let progress = outlineLength - (currentTime /fakeDuration) * outlineLength;
+     outline.style.strokeDashoffset = progress
+
     }
 
 
-}
+};
+
+app();
