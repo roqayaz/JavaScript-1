@@ -33,14 +33,12 @@ const app = () => {
     });
 
     //select sound
-    timeSelect.forEach(Option =>{
-        Option.addEventListener('click', function(){
+    timeSelect.forEach(option =>{
+        option.addEventListener('click', function(){
             fakeDuration =this.getAttribute("data-time");
             timeDisplay.textContent = `${Math.floor(fakeDuration / 60)}:${Math.floor(fakeDuration % 60)}`;
         })
-
     })
-
 
     //Create a function specific to stop and play the sound
     const checkPlaying = song => {
@@ -68,7 +66,6 @@ const app = () => {
      //Animate the text
      timeDisplay.textContent = `${minutes}:${seconds}`;
 
-
      if(currentTime >= fakeDuration) {
        song.pause();
        song.currentTime = 0;
@@ -78,8 +75,6 @@ const app = () => {
 
 
     }
-
-
 };
 
 app();
