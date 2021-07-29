@@ -5,3 +5,13 @@ const cartForParty = {
     dip: 6,
     wine: 36.5
 };
+
+ const calculateTotalPrice = obj => {
+     const sum = Object.values(obj).reduce((a, b) => a + b);
+     console.log(`Total: €${sum}`)
+
+    };
+
+ calculateTotalPrice(cartForParty);
+
+ 
