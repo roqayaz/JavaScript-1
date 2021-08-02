@@ -34,7 +34,7 @@ const validateCreditNumber = (creditNum) => {
     //the last number be even 
 
     const lastBeEven = (creditNum) =>{
-        if (creditNum[16] % 2 === 0){
+        if (creditNum[creditNum.length-1] % 2 === 0){
           return true
         }else{
             console.log(`Invalid! The last number of input ${creditNum} must be even `)
@@ -58,9 +58,11 @@ const validateCreditNumber = (creditNum) => {
         }
     }
 
-
-
-
+    lengthCharacter()
+    allNumbers();
+    differentNumbers();
+    lastBeEven();
+    sumOfAll();
 
 }
 /* 
