@@ -63,7 +63,7 @@ if (theNumberOfCharacters(num) === false){
   console.log(`Invalid! The input ${num} should contains only numbers!`);
 }
 
-else if (!twoDifferentNum(num)){
+else if (twoDifferentNum(num) === false){
   console.log(`Invalid! The input ${num} should contains at least 2 different types of numbers!`);
 }
 
